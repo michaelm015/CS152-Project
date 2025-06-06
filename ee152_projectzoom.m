@@ -46,7 +46,7 @@ function enhanced_image = processSatelliteImage(img)
     img_butter_color = applyGrayToColor(img, img_butter);
     subplot(2,3,4), imshow(cropCenterRegion(img_butter_color, zoom_frac)), title('Butterworth Notch', 'FontWeight','bold');
 
-    % Gaussian High-Pass Filtering (sharpens instead of blurs)
+    % Gaussian High-Pass Filtering
     sigma = 7;
     [X, Y] = meshgrid(-N/2:N/2-1, -M/2:M/2-1);
     H_gauss = 1 - exp(-(X.^2 + Y.^2) / (2 * sigma^2));
